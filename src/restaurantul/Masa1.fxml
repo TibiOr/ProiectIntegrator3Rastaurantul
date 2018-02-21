@@ -2,46 +2,68 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="782.0" prefWidth="1031.0" style="-fx-background-color: lightgreen;" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurantul.Masa1Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="806.0" prefWidth="1057.0" style="-fx-background-color: lightgreen;" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurantul.Masa1Controller">
    <children>
       <Label layoutX="26.0" layoutY="23.0" text="Masa # 1" textFill="#d02626">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="System Bold" size="18.0" />
          </font></Label>
-      <AnchorPane layoutY="84.0" prefHeight="701.0" prefWidth="1031.0" style="-fx-background-color: #228B22;">
+      <AnchorPane layoutY="60.0" prefHeight="746.0" prefWidth="1057.0" style="-fx-background-color: #37FDFC;">
          <children>
-            <Button layoutX="906.0" layoutY="625.0" mnemonicParsing="false" text="Delogare" />
-            <Button layoutX="734.0" layoutY="625.0" mnemonicParsing="false" text="Numerar" />
-            <Button layoutX="818.0" layoutY="625.0" mnemonicParsing="false" text="Plata Card" />
-            <Button layoutX="351.0" layoutY="625.0" mnemonicParsing="false" text="Modifica" />
-            <Button layoutX="215.0" layoutY="625.0" mnemonicParsing="false" text="TrimiteComanda" />
-            <Button layoutX="124.0" layoutY="625.0" mnemonicParsing="false" text="Sterge" />
-            <Button layoutX="34.0" layoutY="625.0" mnemonicParsing="false" text="Adauga" />
-            <TextArea layoutX="813.0" layoutY="71.0" prefHeight="511.0" prefWidth="156.0" />
-            <TextArea layoutX="383.0" layoutY="81.0" prefHeight="501.0" prefWidth="360.0" />
-            <TextArea layoutX="189.0" layoutY="454.0" prefHeight="128.0" prefWidth="174.0" />
-            <Label layoutX="858.0" layoutY="29.0" text="Categorii" textFill="WHITE">
+            <Button fx:id="binchide" layoutX="891.0" layoutY="662.0" mnemonicParsing="false" onAction="#delogare" text="Revenire la mese" />
+            <Button fx:id="numerar" layoutX="82.0" layoutY="625.0" mnemonicParsing="false" onAction="#numerar" prefWidth="100.0" text="Numerar" />
+            <Button fx:id="plateCard" layoutX="79.0" layoutY="662.0" mnemonicParsing="false" onAction="#plateCard" prefHeight="25.0" prefWidth="100.0" text="Card" />
+            <Button fx:id="modifica" layoutX="753.0" layoutY="662.0" mnemonicParsing="false" onAction="#modifica" prefWidth="100.0" text="Modifica" />
+            <Button fx:id="trimiteComanda" layoutX="892.0" layoutY="625.0" mnemonicParsing="false" onAction="#trimiteComanda" text="TrimiteComanda" />
+            <Button fx:id="sterge" layoutX="753.0" layoutY="625.0" mnemonicParsing="false" onAction="#sterge" prefWidth="100.0" text="Sterge" />
+            <Button fx:id="adauga" layoutX="487.0" layoutY="625.0" mnemonicParsing="false" onAction="#adauga" prefWidth="100.0" text="Adauga" />
+            <Label layoutX="145.0" layoutY="29.0" text="Categorii disponibile:" textFill="#302b54">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="531.0" layoutY="29.0" text="Preparate" textFill="WHITE">
+            <Label layoutX="450.0" layoutY="29.0" text="Preparate disponibile:" textFill="#302b54">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="147.0" layoutY="29.0" text="Comanda" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="26.0" layoutY="508.0" text="Preparate selectate:" textFill="WHITE">
+            <Label layoutX="753.0" layoutY="29.0" text="Preparate selectate:" textFill="#302b54">
                <font>
                   <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <HBox layoutX="43.0" layoutY="70.0" prefHeight="531.0" prefWidth="954.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <TitledPane prefHeight="531.0" prefWidth="318.0" text="Categorii">
+                     <content>
+                        <TextArea prefHeight="200.0" prefWidth="200.0" text="&#10;&#10;Bauturi&#10;&#10;&#10;Ciorbe &#10;&#10;&#10;Fel principal&#10;&#10;&#10;Desert&#10;">
+                           <font>
+                              <Font name="System Bold Italic" size="15.0" />
+                           </font>
+                        </TextArea>
+                     </content>
+                  </TitledPane>
+                  <TitledPane prefHeight="531.0" prefWidth="318.0" text="Preparate">
+                     <content>
+                        <ListView fx:id="preparateDisponibile" prefHeight="200.0" prefWidth="200.0" />
+                     </content></TitledPane>
+                  <TitledPane animated="false" prefHeight="531.0" prefWidth="318.0" text="Selectate">
+                     <content>
+                        <ListView fx:id="selectateSelectate" prefHeight="200.0" prefWidth="200.0" />
+                     </content>
+                  </TitledPane>
+               </children>
+            </HBox>
+            <Label fx:id="succes" layoutX="206.0" layoutY="675.0" text="Comanda a fost trimisa cu succes! " textFill="#d00e0e" visible="false">
+               <font>
+                  <Font name="System Bold Italic" size="33.0" />
                </font>
             </Label>
          </children>
