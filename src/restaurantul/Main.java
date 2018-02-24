@@ -14,6 +14,7 @@ public class Main extends Application {
 			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("Login.fxml"));
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
+			primaryStage.setTitle("Logare"); 
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();

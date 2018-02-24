@@ -50,7 +50,6 @@
             <Font name="Bell MT Italic" size="18.0" />
          </font>
       </Button>
-      <Label text="Label" />
       <Label layoutX="29.0" layoutY="328.0" text="Selecteaza masa dorita..." textFill="#c91d1d">
          <font>
             <Font name="Vivaldi Italic" size="36.0" />
